@@ -11,7 +11,7 @@ func main() {
 
 	pathPtr := flag.String("path", "", "path to exploit")
 	keyPtr := flag.String("key", "", "key path for encrypting")
-	dencryptFlag := flag.Bool("dencrypt", false, "flag for decrypting,if not given will encrypt by default")
+	decryptFlag := flag.Bool("decrypt", false, "flag for decrypting,if not given will encrypt by default")
 
 	flag.Parse()
 
@@ -20,7 +20,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	if *dencryptFlag {
+	if *decryptFlag {
 		exploitation.UndoExploitOn(*pathPtr, *keyPtr)
 		os.Exit(0)
 
